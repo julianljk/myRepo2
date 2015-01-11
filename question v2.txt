@@ -1,0 +1,369 @@
+/*******************************************************************************
+File:             Questions.txt
+
+Author:           Julian Leong, leong
+                  WeiJing Tang, weijing
+
+Completion Date:  14th December 2014
+
+Course:           CS 367, Spring 2014
+*******************************************************************************/
+Directions: answer the following five (5) questions.  Note: some of the 
+questions may require you to know how the LinkedList class is implemented; in 
+these cases, you should make a reasonable assumption and clearly indicate your
+assumptions in your answer.
+
+1) Suppose you insert an item into your hashtable and then immediately do a 
+lookup on that item.  What is the worst-case complexity of your program for 
+the lookup in this situation?  Briefly explain your answer.
+
+Answer:
+	The worst case situation is that all values are stored on a single hash
+index on the hash table. And because each array elements contains a linked
+list, the operation essentially becomes a lookup on a linked list, in which
+case, has a worst-case complexity of order N, O(N)
+
+For questions 2 - 4, you should use the TestHash program as written.
+
+2) In this question you will run MapBenchmark three times using the parameters 
+indicated below:
+	run1		 randIn1000.txt 100
+	run2		 randIn2000.txt 100
+	run3 		randIn10000.txt 100
+
+What is the output for each of the runs?  
+
+Answer:
+
+RUN 1:
+
+TreeMap: get					HashMap: get
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 1							Max : 2
+Mean: 0.130 					Mean: 0.080 
+Std Dev : 0.336					Std Dev : 0.306
+
+TreeMap: put					HashMap: put
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 6							Max : 6
+Mean: 0.230 					Mean: 0.290 
+Std Dev : 0.773					Std Dev : 0.739
+
+TreeMap: floorKey				HashMap: floorKey
+--------------------			--------------------
+Min : 0							Min : 9
+Max : 2							Max : 25
+Mean: 0.160 					Mean: 9.850 
+Std Dev : 0.393					Std Dev : 1.602
+
+TreeMap: remove					HashMap: remove
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 2							Max : 1
+Mean: 0.150 					Mean: 0.090 
+Std Dev : 0.409					Std Dev : 0.286
+
+RUN 2: 
+
+TreeMap: get					HashMap: get
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 1							Max : 3
+Mean: 0.150 					Mean: 0.120 
+Std Dev : 0.357					Std Dev : 0.431
+
+TreeMap: put					HashMap: put
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 11						Max : 11
+Mean: 0.530 					Mean: 0.370 
+Std Dev : 1.360					Std Dev : 1.246
+
+TreeMap: floorKey				HashMap: floorKey
+--------------------			--------------------
+Min : 0							Min : 37
+Max : 3							Max : 55
+Mean: 0.230 					Mean: 41.160
+Std Dev : 0.487					Std Dev : 2.004
+
+TreeMap: remove					HashMap: remove
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 2							Max : 2
+Mean: 0.260 					Mean: 0.150 
+Std Dev : 0.502					Std Dev : 0.357
+
+Run3: 
+
+TreeMap: get					HashMap: get
+--------------------			--------------------
+Min : 1							Min : 0
+Max : 3							Max : 9
+Mean: 1.090 					Mean: 0.280 
+Std Dev : 0.319					Std Dev : 0.960
+
+TreeMap: put					HashMap: put
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 68						Max : 21
+Mean: 2.880 					Mean: 1.520 
+Std Dev : 6.993					Std Dev : 2.156
+
+TreeMap: floorKey				HashMap: floorKey
+--------------------			--------------------
+Min : 0							Min : 1022
+Max : 5							Max : 1225
+Mean: 0.570 					Mean: 1116.070 
+Std Dev : 0.667					Std Dev : 53.116
+
+TreeMap: remove					HashMap: remove
+--------------------			--------------------
+Min : 1							Min : 0
+Max : 10						Max : 7
+Mean: 1.340 					Mean: 0.310 
+Std Dev : 0.972					Std Dev : 0.796
+
+
+
+3) In this question you will again run TestHash three times, this time using the 
+parameters:
+	run4		 badIn1000.txt 100
+	run5		 badIn2000.txt 100
+	run6 		badIn10000.txt 100
+
+What is the output for each of the runs?  
+Run 4:	
+TreeMap: get					HashMap: get
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 1							Max : 6
+Mean: 0.140 					Mean: 0.220 
+Std Dev : 0.347					Std Dev : 0.687
+
+TreeMap: put					HashMap: put
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 7							Max : 8
+Mean: 0.280 					Mean: 0.320 
+Std Dev : 0.838					Std Dev : 0.904
+
+TreeMap: floorKey				HashMap: floorKey
+--------------------			--------------------
+Min : 0							Min : 7
+Max : 2							Max : 22
+Mean: 0.140 					Mean: 7.510 
+Std Dev : 0.375					Std Dev : 1.533
+
+TreeMap: remove					HashMap: remove
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 2							Max : 6
+Mean: 0.190 					Mean: 0.390 
+Std Dev : 0.440					Std Dev : 0.733
+
+Run 5: 
+TreeMap: get					HashMap: get
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 1							Max : 8
+Mean: 0.200 					Mean: 0.670 
+Std Dev : 0.400					Std Dev : 0.884
+
+TreeMap: put					HashMap: put
+--------------------			--------------------
+Min : 0							Min : 0
+Max : 10						Max : 15
+Mean: 0.510 					Mean: 0.450 
+Std Dev : 1.253					Std Dev : 1.558
+
+TreeMap: floorKey				HashMap: floorKey
+--------------------			--------------------
+Min : 0							Min : 35
+Max : 3							Max : 60
+Mean: 0.110 					Mean: 39.600 
+Std Dev : 0.397					Std Dev : 2.608
+
+TreeMap: remove					HashMap: remove
+--------------------			--------------------
+Min : 0							Min : 1
+Max : 3							Max : 8
+Mean: 0.240 					Mean: 1.180
+Std Dev : 0.531					Std Dev : 0.753
+
+Run 6:
+
+TreeMap: get					HashMap: get
+--------------------			--------------------
+Min : 1							Min : 40
+Max : 3							Max : 71
+Mean: 1.100 					Mean: 47.370 
+Std Dev : 0.332					Std Dev : 3.804
+
+TreeMap: put					HashMap: put
+--------------------			--------------------
+Min : 0							Min : 17
+Max : 73						Max : 52
+Mean: 2.970 					Mean: 21.300 
+Std Dev : 7.364					Std Dev : 3.442
+
+TreeMap: floorKey				HashMap: floorKey
+--------------------			--------------------
+Min : 0							Min : 1274
+Max : 5							Max : 1417
+Mean: 0.590 					Mean: 1361.660 
+Std Dev : 0.680					Std Dev : 24.793
+
+TreeMap: remove					HashMap: remove
+--------------------			--------------------
+Min : 1							Min : 78
+Max : 9							Max : 130
+Mean: 1.320 					Mean: 96.460 
+Std Dev : 0.882					Std Dev : 7.323
+
+Answer:
+
+4) Briefly analyze your results from questions 2 and 3. Consider the 
+following aspects:
+	- underlying data structure
+	- the number of inputs
+	- the input file
+How do these aspects influence the statistics? How do the table statistics 
+affect the performance (times)? 
+
+	For a treemap, all the treemap operations would always guarantee O(log N)
+time in the worst case, this means that only the number of inputs would
+affect the time complexity, and not the structure of the input file (badIn vs
+RandIn) This is why the data in treeMap for the two input file types (badIn
+vs RandIn) do not differ by a large amount, because it does not affect the
+structure of the tree in any form. A large number of items however, will
+affect the performance. because it causes the height of the tree to increase.
+The performance does drop as the number of items increase, however, because
+the operations in treemap are O(log N).
+
+	However, for a hashmap, the time complexity of the operation depends a
+lot more on the input file type (badIn vs RandIn). The number of inputs for
+hashmap, does not affect the time complexity, because the hashCode will give
+us a direct mapping to its index in the hashTable. The input file affects the
+hashmap a lot more. This is because a badly structured input file (one that
+hashes all the keys to a single index in the hashtable) would give us at
+worst a time complexity of O(N). This is because each hashtable index has an
+underlying linked list data structure, so if we were to store all elements in
+one linkedlist, lookup operations would take O(N) time. Badly hashed keys (or
+in this case bad keys) would cause the performance of the hashmap to drop
+drastically as seen in the badIn test runs.
+
+Answer:
+
+5) Using the above data, give the complexity of each SimpleMapADT method for 
+SimpleTreeMap and SimpleHashMap.  Justify your answer with your run results.
+
+For all the methods, I noticed that the for loops surrounding the timers go through 
+N-input number of times, causing all the values to be multiplied by a factor of N, 
+in order to obtain the complexities of the methods, we should observe the data with 
+this error in mind. 
+
+Answer:
+For SimpleTreeMap
+
+Get:
+Complexity O(log N)
+	From the data, we can see that the means increase roughly linear (means
+of 0.13, 0.15, 1.09) , we can argue that the difference between N log N and N
+are negligible. This coincides with its theoretical time complexity, which is
+Log N. Multiplied with the N complexity on the for loop would make it N log
+N. This time complexity is consistent across both randIn and badIn, because
+the time complexity is dictated by the number of input, not the structure of
+the data. 
+
+Put:
+Complexity O(log N)
+	From the data, we can see that the means increase roughly linear (means
+of 0.23, 0.53, 2.880), we can argue that the difference between N log N and N
+are negligible. This coincides with its theoretical time complexity, which is
+O (log N). Multiplied with the N complexity on the for loop would make it N
+log N. This time complexity is consistent across both randIn and badIn,
+because the time complexity is dictated by the number of input, not the
+structure of the data. 
+
+FloorKey:
+Complexity O(log N)
+	From the data, we can see that the means increase roughly linear (means
+of 0.16, 0.26, 0.57), we can argue that the difference between N log N and N
+are negligible. This coincides with its theoretical time complexity, which is
+O (log N). Multiplied with the N complexity on the for loop would make it N
+log N. This time complexity is consistent across both randIn and badIn,
+because the time complexity is dictated by the number of input, not the
+structure of the data. 
+
+Remove: 
+Complexity O(log N)
+	From the data, we can see that the means increase roughly linear (means
+of 0.15, 0.26, 1.30), we can argue that the difference between N log N and N
+are negligible. This coincides with its theoretical time complexity, which is
+O (log N). Multiplied with the N complexity on the for loop would make it N
+log N. This time complexity is consistent across both randIn and badIn,
+because the time complexity is dictated by the number of input, not the
+structure of the data. 
+
+SimpleHashMap
+
+Get:
+Complexity O(N)
+	Because the data depends greatly on the structure of the input (randIn vs
+BadIn), the time complexity varies based on the input given in, in its worst
+case, it would would take a worst case of O(N), that is when all the keys are
+hashed onto a single entry on the hash index. 
+
+	This multiplied by N (on the for loop) causes the output to display O(N^2) 
+behavior (with means of 0.22, 0.67, 47.37 for badIn). On an average case it would 
+take constant time such as seen in randInt (with means of 0.08, 0.12, 0.28)
+
+Put:
+Complexity O(N)
+	Because the data depends greatly on the structure of the input (randIn vs
+BadIn), the time complexity varies based on the input given in, in its worst
+case, it would would take a worst case of O(N), that is when all the keys are
+hashed onto a single entry on the hash index. The program would then have to
+iterate through the linked-list to see if a value already exists for a
+pre-existing key. It would also have to periodically resize the array if it
+exceeds its load factor
+
+	This multiplied by N (on the for loop) causes the output to display
+O(N^2) behavior (with means of 0.32, 0.645, 21.30 for badIn). On an average
+case it would take constant time such as seen in randInt (with means of 0.29,
+0.37, 1.520)
+ 
+FloorKey:
+Complexity O(N)
+	Because the data depends greatly on the structure of the input (randIn vs
+BadIn), the time complexity varies based on the input given in, in its worst
+case, it would would take a worst case of O(N), that is when all the keys are
+hashed onto a single entry on the hash index. If this is the case, the
+program would have to iterate through each element in the linked list to find
+the greatest key that is less than or equal to the key passed in. 
+
+	This multiplied by N (on the for loop) causes the output to display
+O(N^2) behavior (with means of 7.50, 39.6, 1361.66 for badIn). On an average
+case it SHOULD take constant time, but the output given by the statistics do
+not seem to coincide and is also showing worst case behavior(with means of
+9.85, 41.16, 1116.07)
+
+Remove:
+Complexity O(N)
+	Because the data depends greatly on the structure of the input (randIn vs
+BadIn), the time complexity varies based on the input given in, in its worst
+case, it would would take a worst case of O(N), that is when all the keys are
+hashed onto a single entry on the hash index. If this is the case, the
+program would have to iterate through each element in the linked list to find
+a key that is to be removed. 
+
+	This multiplied by the N on the for causes the output to display O(N^2)
+behavior (with means of 0.39, 1.18, 96.460 for badIn). On an average case it
+would take constant time such as seen in randInt (with means of 0.09, 0.150,
+0.310)
+
+
+
+ 
